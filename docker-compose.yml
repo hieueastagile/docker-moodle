@@ -1,0 +1,34 @@
+version: '2'
+
+services:
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+        POSTGRES_USER: moodle
+        POSTGRES_PASSWORD: abc123 
+        POSTGRES_DB: moodle
+        PGDATA: /pgdata
+    volumes:
+      - pgdata:/pgdata
+
+  moodle:
+    build: .
+    command: '/usr/bin/supervisord -n -c /etc/supervisord.conf'
+    volumes:
+      - moodle-data:/moodle-data
+      - app:/moodle
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+    dns:
+      - 8.8.8.8
+
+volumes:
+  app:
+  moodle-data:
+  pgdata:
+
