@@ -77,11 +77,11 @@ type value
 -------------------------------------------------------------------------------
 == Full site name ==
 type value
-: Involvio University
+: <school name>
 -------------------------------------------------------------------------------
 == Short name for site (eg single word) ==
 type value
-: InvolvioU
+: <initial>
 -------------------------------------------------------------------------------
 == Admin account username ==
 type value, press Enter to use default value (admin)
@@ -99,6 +99,6 @@ type value, press Enter to use default value ()
 type value
 ```
 
-## Troubleshoot
+## Troubleshooting
 - You might not get the correct style when you visit the first time, try to increase your max_excution_time (see php.ini), and memory_limit (see www.conf, php_admin_value[memory_limit]) it might possibly fix it.
 - For web address, remember not to put the port into your url (http://localhost:xxx), moodle by default won't work with it.
