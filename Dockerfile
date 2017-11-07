@@ -14,3 +14,4 @@ RUN apt-get update && \
 COPY site.conf /etc/nginx/sites-available/default
 COPY www.conf /usr/local/etc/php-fpm.d/www.conf
 COPY supervisord.conf /etc/supervisord.conf
+COPY php.ini /usr/local/etc/php/php.ini
